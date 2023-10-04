@@ -1,0 +1,608 @@
+@charset "utf-08";
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Luckiest+Guy&family=Noto+Sans:ital,wght@0,400;0,800;0,900;1,400;1,800;1,900&display=swap');
+
+/* =========================공통사항========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    color: #f1f1f1;
+    
+}
+
+body {background-color: #010101;}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: top;
+    /* display: block; */
+}
+
+
+.wrap {
+    position: relative;
+    /* width: 1280px; */
+    display: flex;
+    overflow: hidden;
+
+}
+
+/* =========================header========================= */
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(14, 13, 13, 0.945);
+    align-items: center;
+    z-index: 99;
+
+}
+
+header .logo {
+    width: 8rem;
+    height: 4rem;
+    margin: 1rem;
+
+}
+
+header .logo img {
+    width: 7rem;
+    height: 3rem;
+
+}
+
+header .menu {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 3.5rem;
+    background-color: transparent;
+}
+
+header nav .menu li a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+header nav .menu li:hover a {}
+
+/* =========================스크롤 마우스========================= */
+.scrll-mouse img {
+    width: 1.2rem;
+    height: 2.3rem;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: mouse 1s infinite;
+    z-index: 999;
+}
+
+@keyframes mouse {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+/* =========================main========================= */
+
+.prepage {
+    width: 100%;
+    height: 100vh;
+    /* background-color: #fef7ee; */
+    position: fixed;
+    overflow: hidden;
+}
+
+.prepage .bg {
+    clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 75% 57%, 80% 90%, 51% 78%, 21% 91%, 25% 58%, 2% 35%, 34% 30%);
+    /* width: 110px;
+    height: 110px; */
+    width: 100%;
+    background: #fef7ee;
+    position: absolute;
+    /* position: relative; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prepage .text {
+    position: relative;
+}
+
+.prepage .text h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f2f2f2;
+    position: absolute;
+    top: 6rem;
+    right: 3rem;
+
+}
+
+.prepage .star {
+    clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 75% 57%, 80% 90%, 51% 78%, 21% 91%, 25% 58%, 2% 35%, 34% 30%);
+    background: url(../IMAGES//moon.jpg) no-repeat center/contain;
+    background-size: 120rem;
+    width: 100%;
+    /* width: 100px; */
+    /* height: 100px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index:-19; */
+}
+
+.wrap .banner {
+    width: 4rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(164, 89, 209, 0.1);
+    z-index: 99;
+}
+
+.container {
+    width: 100%;
+    height: 55rem;
+    position: relative;
+}
+
+main {
+    width: 100%;
+}
+
+/* ----------------home------------------------- */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.home .container {
+    right: 0;
+    display: block;
+}
+
+.home .container .content {
+    width: 100%;
+    height: 5rem;
+    margin-top: 5rem;
+}
+
+.home .container .content p {
+     font-size: 3rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.home .container .img {
+    width: 70rem;
+    height: 50rem;
+    margin: 0 auto;
+}
+
+.home .container .img img {
+    width: 100%;
+}
+
+
+/* =========================about me========================= */
+.about {
+    position: fixed;
+}
+.about .container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;    */
+    /* margin: 0 auto; */
+    position: relative;
+}
+.about .container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.about .container .mypic {
+    display: block;
+    float: left;
+    width: 40%;
+    height: 90%;
+   
+}
+.about .container .mypic img {
+    width: 35rem;
+    height: 43rem;
+}
+
+.about .container .content {
+    display: block;
+    
+    width: 40%;
+    height: 43rem;
+}
+
+.about .container .content h1 {
+    font-size: 3.5rem;
+    max-width: 35rem;
+}
+
+.about .container .content p {
+    font-size: 1.3rem;
+    max-width: 35rem;
+}
+
+/* ================ web 포폴 ========================= */
+.port-w {position: fixed;}
+
+.port-w .container {
+    align-items: center;
+    display: flex;
+    margin-left: 5rem;
+    justify-content: space-between;
+}
+
+.port-w .container .img {
+    width: 45rem;
+    margin: 0.5rem;
+}
+
+.port-w .container .img img {
+    width: 100%;
+
+}
+
+
+.port-w .container .slide01 {
+    width: 60rem;
+    height: 55%;
+    overflow: hidden;
+    align-items: center;
+    margin-left: 2rem;
+    margin: 0.5rem 0;
+
+}
+
+.port-w .container .slide01 .slide-wrap {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: left;
+}
+
+.port-w .container .slide01 .slide {
+      width: 38rem;
+    margin: 0.5rem;
+    border: 0.1rem solid #e1e1e1;
+}
+
+.port-w .container .slide01 .slide .img {
+    width: 90%;
+    margin: 0.7rem auto;
+    transition: filter 0.5s;
+}
+
+.port-w .container .slide01 .slide .img img {
+    width: 100%;
+    filter: grayscale(70%);
+}
+.port-w .container .slide01 .slide .img :hover img {
+    filter: blur(0);}
+
+.port-w .container .slide01 .slide .slide-txt {
+    color: #f1f1f1;
+    max-width: 90%;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+/* ========================= 영상 포폴 ========================= */
+.port-m {
+    position: fixed;
+}
+
+.port-m .container {
+    align-items: center;
+    display: flex;
+    margin-left: 5rem;
+    justify-content: space-between;
+    
+}
+
+.port-m .container .slide02 {
+    width: 60rem;
+    height: 55%;
+    overflow: hidden;
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    margin-left: 2rem;
+    /* justify-content: left; */
+    margin: 0.5rem 0;
+}
+
+
+.port-m .container .slide02 .slide-wrap {
+    position: absolute;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: right;
+}
+
+
+.port-m .container .slide02 .slide {
+    width: 38rem;
+    margin: 0.5rem;
+    border: 0.1rem solid #e1e1e1;}
+
+.port-m .container .slide02 .slide .video {
+    width: 90%;
+    margin: 0.7rem auto;
+    transition: filter 0.3s;
+}
+
+.port-m .container .slide02 .slide .video video{
+    width: 100%;
+    filter: grayscale(70%);
+}
+.port-m .container .slide02 .slide .video:hover video{
+    filter: blur(0);
+}
+
+.port-m .container .slide02 .slide .video-txt {
+    color: #f1f1f1;
+    max-width: 90%;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.port-m .container .img {
+    width: 45rem;
+    margin: 0.5rem;
+}
+
+
+.port-m .container .img img {
+    width: 100%;
+}
+
+/* ========================= contact me ========================= */
+.contact {
+    position: fixed;
+    width: 100%;
+   
+}
+
+
+.contact .container {
+    
+    width: 90%;
+    height: 70rem;
+    padding-top: 5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.contact .contact-me::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.contact .container .title {
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    text-align: right;
+
+}
+
+
+.contact .contact-me .left {
+    float: left;
+    width: 30%;
+}
+
+.contact .contact-me .left .card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.contact .contact-me .left .card i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+
+.contact .contact-me .right {
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+}
+
+.contact .contact-me .right .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.contact .contact-me .right .form-group label {
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+.contact .contact-me .right .form-group input {
+    padding: 0.6rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.contact .contact-me .right .form-group input:focus {
+    border: 1px solid #719ece;
+    box-shadow: 0 0 10px #719ece;
+}
+
+
+.contact .contact-me .right .form-group textarea {
+    padding: 0.6rem;
+    width: 100%;
+    height: 300px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.contact .contact-me .right .form-group textarea:focus {
+    border: 1px solid #719ece;
+    box-shadow: 0 0 10px #719ece;
+}
+
+.contact .contact-me .right button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1f1d1d;
+    border: none;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* ========================= footer ========================= */
+
+
+.last {
+    position: fixed;
+    width: 100%;
+    display: block;
+    height: calc(100vh - 10rem);
+}
+
+.last .content {
+    width: 100%;
+    height: 5rem;
+    display: block;
+    position: relative;
+    right: 0;
+    margin-top: 5rem;
+}
+
+.last  .content p {
+     font-size: 3rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.last .img {
+    width: 70rem;
+    height: 30rem;
+    margin: 0 auto;
+}
+
+.last .img img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    color: #f1f1f1;
+}
+
+footer .content {
+    text-align: center;
+    line-height: 2.5;
+    padding-top: 1rem;
+}
+
+
+footer .content p {font-size: 1.2rem;}
+
+
+
+
+
+
+/*=============== button============ */
+
+.button {
+    position: absolute;
+    right: 2rem;
+    bottom: 13.5rem;
+    margin: 20px;
+}
+
+.button .circle {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #f2f2f2;
+    border-radius: 50%;
+    animation: circle 20s infinite;
+
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button .more {
+    position: absolute;
+    left: 25px;
+    top: 15px;
+    color: #f1f1f1;
+
+}
+
+.button .more p {
+    font-weight: 600;
+}
+
+.button .back {
+    position: absolute;
+    left: 25px;
+    top: 15px;
+    color: #f1f1f1;
+
+}
+
+.button .back p {
+    font-weight: 600;
+}
