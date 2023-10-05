@@ -8,10 +8,12 @@
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
     color: #f1f1f1;
+    position: relative;
+    
     
 }
 
-body {background-color: #010101;}
+body {background: url(../IMAGES/night_sky.gif);}
 li {
     list-style: none;
 }
@@ -104,7 +106,7 @@ header nav .menu li:hover a {}
 .prepage {
     width: 100%;
     height: 100vh;
-    /* background-color: #fef7ee; */
+    background-color: #f8e9d5;
     position: fixed;
     overflow: hidden;
 }
@@ -114,7 +116,7 @@ header nav .menu li:hover a {}
     /* width: 110px;
     height: 110px; */
     width: 100%;
-    background: #fef7ee;
+    background-color: #fef7ee;
     position: absolute;
     /* position: relative; */
     top: 50%;
@@ -130,7 +132,7 @@ header nav .menu li:hover a {}
     font-size: 5rem;
     font-weight: bold;
     line-height: 1.5;
-    color: #f2f2f2;
+    color: #fff;
     position: absolute;
     top: 6rem;
     right: 3rem;
@@ -163,7 +165,7 @@ header nav .menu li:hover a {}
 
 .container {
     width: 100%;
-    height: 55rem;
+    /* height: 55rem; */
     position: relative;
 }
 
@@ -210,36 +212,33 @@ main {
 /* =========================about me========================= */
 .about {
     position: fixed;
+    width: 100%;
+    height: 100vh;
+    
 }
 .about .container {
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;    */
-    /* margin: 0 auto; */
-    position: relative;
-}
-.about .container::after {
-    content: '';
-    display: block;
-    clear: both;
+    gap: 3rem; 
+    margin-top: 5rem;  
+    
 }
 
-.about .container .mypic {
-    display: block;
+.about .container .img {
     float: left;
     width: 40%;
     height: 90%;
    
 }
-.about .container .mypic img {
+.about .container .img > img {
     width: 35rem;
     height: 43rem;
+    margin-left: 10%;
 }
 
 .about .container .content {
     display: block;
-    
     width: 40%;
     height: 43rem;
 }
@@ -254,14 +253,77 @@ main {
     max-width: 35rem;
 }
 
+.about .about-more {
+    display: none;
+    width: 25rem;
+    height: 30rem;
+    background-color: rgba(14, 13, 13, 0.945);
+    color: #f2f2f2;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.3rem dashed #f2f2f2;
+    border-radius: 2rem
+
+}
+.about .about-more .content {
+    margin: 2rem auto;
+}
+
+.about .about-more h3{
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    padding: 1.5rem 0 0 0.5rem;
+}
+.about .about-more p{
+    text-align: center;
+    line-height: 1.5;
+}
+
+.about .about-more button {
+    width: 4rem;
+    height: 2rem;
+    position: absolute;
+    left: 50%;
+    bottom: 1.2rem;
+    transform: translateX(-50%);
+    border: 0.1rem solid #f2f2f2;
+    background-color: rgba(14, 13, 13, 0.945);
+}
+
+.about .about-more button:hover {
+    cursor: pointer;
+}
+
+.about .about-more {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.7rem;
+}
+
+.about .about-more.active {
+    display: block;
+}
+
+/* =======js 활성화======= */
+.about.on {
+    filter: grayscale(100%);
+    color: #bebebe;
+}
+
 /* ================ web 포폴 ========================= */
 .port-w {position: fixed;}
 
 .port-w .container {
     align-items: center;
     display: flex;
+    margin-top: 5rem;
     margin-left: 5rem;
     justify-content: space-between;
+    height: 57rem;
 }
 
 .port-w .container .img {
@@ -332,6 +394,8 @@ main {
     display: flex;
     margin-left: 5rem;
     justify-content: space-between;
+    height: 55rem;
+    right: 0;
     
 }
 
@@ -388,18 +452,37 @@ main {
 .port-m .container .img {
     width: 45rem;
     margin: 0.5rem;
+
 }
 
 
 .port-m .container .img img {
     width: 100%;
 }
+/* =====================pop up================== */
+.port-m .container .popup {
+    position: absolute;
+    top: 0;left: 0; right: 0;bottom: 0;
+    width: 100vh;
+    height: 100vh;
+    background-color: rgba(235, 227, 227, 0.7);
+    z-index: 99;
+    /* display: none; */
+}
+
+.port-m .container .popup video {
+        width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    top: 0; left: 0;
+}
+
 
 /* ========================= contact me ========================= */
 .contact {
     position: fixed;
     width: 100%;
-   
+   z-index: 99;
 }
 
 
@@ -433,7 +516,7 @@ main {
 }
 
 .contact .contact-me .left .card {
-    border: 1px solid #ccc;
+    border: 0.1rem solid #ccc;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -465,28 +548,28 @@ main {
     padding: 0.6rem;
     width: 100%;
     outline: none;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.64rem;
 }
 
 .contact .contact-me .right .form-group input:focus {
-    border: 1px solid #719ece;
-    box-shadow: 0 0 10px #719ece;
+    border: 0.1rem solid #719ece;
+    box-shadow: 0 0 0.64rem #719ece;
 }
 
 
 .contact .contact-me .right .form-group textarea {
     padding: 0.6rem;
     width: 100%;
-    height: 300px;
+    height: 18.75rem;
     outline: none;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.64rem;;
 }
 
 .contact .contact-me .right .form-group textarea:focus {
-    border: 1px solid #719ece;
-    box-shadow: 0 0 10px #719ece;
+    border: 0.1rem solid #719ece;
+    box-shadow: 0 0 0.64rem #719ece;
 }
 
 .contact .contact-me .right button {
@@ -495,7 +578,7 @@ main {
     background-color: #1f1d1d;
     border: none;
     color: #f1f1f1;
-    border-radius: 10px;
+    border-radius: 0.64rem;
 }
 
 /* ========================= footer ========================= */
@@ -505,7 +588,9 @@ main {
     position: fixed;
     width: 100%;
     display: block;
-    height: calc(100vh - 10rem);
+    height: calc(100vh);
+    background-color: #000000;
+    z-index: 997;
 }
 
 .last .content {
@@ -539,6 +624,7 @@ footer {
     width: 100%;
     height: 5rem;
     color: #f1f1f1;
+    z-index: 999;
 }
 
 footer .content {
@@ -551,23 +637,21 @@ footer .content {
 footer .content p {font-size: 1.2rem;}
 
 
-
-
-
-
 /*=============== button============ */
 
 .button {
     position: absolute;
     right: 2rem;
     bottom: 13.5rem;
-    margin: 20px;
+    margin: 1.25rem;
 }
+
+.button:hover{cursor: pointer;}
 
 .button .circle {
     width: 50px;
     height: 50px;
-    border: 2px dashed #f2f2f2;
+    border: 0.1rem dashed #f2f2f2;
     border-radius: 50%;
     animation: circle 20s infinite;
 
@@ -585,8 +669,8 @@ footer .content p {font-size: 1.2rem;}
 
 .button .more {
     position: absolute;
-    left: 25px;
-    top: 15px;
+    left: 1.56rem;
+    top: 0.75rem;
     color: #f1f1f1;
 
 }
@@ -597,12 +681,50 @@ footer .content p {font-size: 1.2rem;}
 
 .button .back {
     position: absolute;
-    left: 25px;
-    top: 15px;
+    left: 1.56rem;
+    top: 0.75rem;
     color: #f1f1f1;
 
 }
 
 .button .back p {
     font-weight: 600;
+}
+
+/* ==========반응형========= */
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 12px;
+}
+.container {
+    flex-direction: column;
+}
+
+img {
+    width: 25rem;
+    height: 34rem;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 10px;
+
+}
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 9px;
+    }
+
 }
