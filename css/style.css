@@ -159,7 +159,7 @@ header nav .menu li:hover a {}
     top: 0;
     left: 0;
     position: fixed;
-    /* background-color: rgba(164, 89, 209, 0.1); */
+    background-color:transparent;
     z-index: 99;
 }
 
